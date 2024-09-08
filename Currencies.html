@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Currency Converter</title>
+
+<style>
+
+#CSS
+  
+body {
+
+font-family: Arial, sans-serif;
+
+margin: 0;
+
+padding: 0;
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+height: 100vh;
+
+background-color: #f4f4f4;
+
+}
+
+#converter {
+
+background-color: #fff;
+
+padding: 20px;
+
+border-radius: 8px;
+
+box-shadow: 0 10px rgba(0, 0, 0, 0.1);
+
+</style>
+
+</head>
+
+#javascript 
+  
+<body>
+
+<div id="converter">
+
+<h2>Currency Converter</h2>
+
+<div>
+
+<label for="fromCurrency">From: </label>
+
+<
+
+select id="fromCurrency">
+
+<option value="USD">USD</option>
+
+<option value="EUR">EUR</option>
+
+<option value="GBP">GBP</option> <!-- Add more options as needed -->
+
+</select>
+
+<input type="number" id="amount" placeholder="Amount" min="0">
+/div> <div>
+
+<label for="toCurrency">To: </label>
+
+<select id="toCurrency"> coption value="USD">USD</option>
+
+<option value="EUR">EUR</option>
+
+coption value="GBP">GBP</option>
+
+<!-- Add more options as needed
+
+</select>
+
+<input type="text" id="convertedAmount" placeholder "Converted Amount" disable
+
+</div>
+
+<button onclick="convert()">Convert</button>
+
+</div>
+
+<script>
+
+function convert() {
+
+const fromCurrency document.getElementById('fromCurrency").value;
+
+const toCurrency document.getElementById('toCurrency').value;
+
+const amount document.getElementById('amount').value;
+
+fetch('https://api.exchangerate-api.com/v4/latest/$(fromCurrency)") .
+
+then(response > response.json())
+
+then(data[
+
+const exchangeRate data.rates[toCurrency];
+
+const convertedAmount (amount exchangeRate).toFixed(2); document.getElementById('convertedAmount').value convertedAmount; })
+
+.catch(error > console.error('Error:", error));
+
+} </script>
+
+</body> </html>
